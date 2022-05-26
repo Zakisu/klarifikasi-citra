@@ -32,7 +32,7 @@
     {% if status %}
         <br>
         <img src="{{ url_for('upload', filename=file) }}" class="img-fluid" alt=""
-                     style="max-width: 500px;">
+                     style="min-width: 150px;min-height: 150px;">
         <br>
         <h1>Prediksi Dari Gambar: {{ output }}</h1>
     {% endif %}
