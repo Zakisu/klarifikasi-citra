@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tebak Gambar</title>
+
+    <script data-require="jquery@2.2.4" data-semver="2.2.4"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7"
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Tebak Gambar Yuk!</h1>
+    <div class="row">
+        <div class="col">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="formFileLg" class="form-label">Masukkan File Untuk diprediksi</label>
+                    <input name="file" class="form-control form-control-lg" id="formFileLg" type="file">
+                </div>
+                <br>
+                <button type="submit" type="button" class="btn btn-primary">Sumbit!!!</button>
+            </form>
+        </div>
+    </div>
+    {% if status %}
+        <h1>Prediksi Dari Gambar: {{ output }}</h1>
+    {% endif %}
+</div>
+</body>
+</html>
