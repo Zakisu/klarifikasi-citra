@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, url_for
+from flask import Flask, render_template, request, flash, url_for, send_from_directory
 import os
 import numpy as np
 from skimage.io import imread
@@ -86,13 +86,15 @@ def hello_world():  # put application's code here
             # get the prediction
             output = model(filename)[0]
             status = 1
-            os.remove(os.getcwd()+'/upload/'+filename)
-        return render_template('index.html', output=output, status=status)
+            # os.remove(os.getcwd()+'/upload/'+filename)
+        return render_template('index.html', output=output, status=status,file=filename)
     # If request method is GET, here
     else:
         return render_template('index.html', status=status)
 
-
+@app.route('/uploads/<filename>')
+def upload(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
     app.run()

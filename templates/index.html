@@ -30,6 +30,10 @@
         </div>
     </div>
     {% if status %}
+        <br>
+        <img src="{{ url_for('upload', filename=file) }}" class="img-fluid" alt=""
+                     style="max-width: 500px;">
+        <br>
         <h1>Prediksi Dari Gambar: {{ output }}</h1>
     {% endif %}
 </div>
